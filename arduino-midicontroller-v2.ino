@@ -21,6 +21,8 @@
 #define TRIGPIN_6 12
 #define ECHOPIN_6 13
 
+#define POTPIN_1 14
+
 // INIT CLASS INSTANCE
 
 clSonar sonar1(TRIGPIN_1, ECHOPIN_1, 0);
@@ -29,6 +31,8 @@ clSonar sonar3(TRIGPIN_3, ECHOPIN_3, 2);
 clSonar sonar4(TRIGPIN_4, ECHOPIN_4, 3);
 clSonar sonar5(TRIGPIN_5, ECHOPIN_5, 4);
 clSonar sonar6(TRIGPIN_6, ECHOPIN_6, 5);
+
+clPotentiometer pot1(POTPIN_1, 0);
 
 // GENERAL SETUP
 
@@ -46,5 +50,6 @@ void loop() {
   sonar5.updateMidi();
   sonar6.updateMidi();
 
+  sonar6.updateMidi();
   delay(100); 
 }

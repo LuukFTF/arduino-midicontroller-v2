@@ -45,7 +45,7 @@ class clSonar {
   void updateMidi() {
     getValue();
     
-    int valDiff = distance - lastVal;
+    int valDiff = distance  - lastVal;
 
     if (abs(valDiff) > diff && distance < 50) {
       int distanceMap = map(distance, 0, 50, 0, 127);
