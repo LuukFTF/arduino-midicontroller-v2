@@ -27,7 +27,7 @@ class clSonar {
     pinMode(echoPin, INPUT); 
     update();
     }
-  void update() {
+  int update() {
     digitalWrite(trigPin, LOW); 
     delayMicroseconds(2); 
     digitalWrite(trigPin, HIGH); 
@@ -37,12 +37,12 @@ class clSonar {
     duration = pulseIn(echoPin, HIGH); 
     distance = (duration*.0343)/2; 
    }
-  void getValue() {
+  int getValue() {
     update();
     return(distance);
   }
 
-  void updateMidi() {
+  int updateMidi() {
     getValue();
     
     int valDiff = distance  - lastVal;

@@ -24,11 +24,11 @@ class clPotentiometer {
     void update() {
       potVal = analogRead(potPin);
     }
-    void getValue() {
+    int getValue() {
       update();
       return(potVal);
     }
-    void updateMidi(){
+    int updateMidi(){
       int potValDiff = potVal - lastVal;
       
       if (abs(potValDiff) > diff) {
@@ -36,6 +36,6 @@ class clPotentiometer {
         lastVal = potVal;
       }
     }
-  }
+  };
 
   

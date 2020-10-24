@@ -49,7 +49,5 @@ void loop() {
   sonar4.updateMidi();
   sonar5.updateMidi();
   sonar6.updateMidi();
-
-  sonar6.updateMidi();
   delay(100); 
 }
