@@ -1,5 +1,7 @@
 #include "clSonar.h"
 #include "clPotentiometer.h"
+#include "clMatrixScreen.h"
+#include "fnMIDImessage.h"
 
 // DEFINE PINS
 
@@ -23,6 +25,10 @@
 
 #define POTPIN_1 14
 
+#define POTPIN_2 15
+
+#define POTPIN_3 16
+
 // INIT CLASS INSTANCE
 
 clSonar sonar1(TRIGPIN_1, ECHOPIN_1, 0);
@@ -33,6 +39,8 @@ clSonar sonar5(TRIGPIN_5, ECHOPIN_5, 4);
 clSonar sonar6(TRIGPIN_6, ECHOPIN_6, 5);
 
 clPotentiometer pot1(POTPIN_1, 0);
+clPotentiometer pot2(POTPIN_2, 0);
+clPotentiometer pot3(POTPIN_3, 0);
 
 // GENERAL SETUP
 
@@ -49,5 +57,9 @@ void loop() {
   sonar4.updateMidi();
   sonar5.updateMidi();
   sonar6.updateMidi();
+
+  pot1.updateMidi();
+  pot2.updateMidi();
+  pot3.updateMidi();
   delay(100); 
 }

@@ -1,9 +1,8 @@
 
-void MIDImessage(uint8_t status, uint8_t data1, uint8_t data2) {
+void MIDImessage3(uint8_t status, uint8_t data1, uint8_t data2) {
   Serial.write(status);
   Serial.write(data1);
   Serial.write(data2);  
-  
 }
 
 class clSonar {
@@ -49,7 +48,7 @@ class clSonar {
 
     if (abs(valDiff) > diff && distance < 50) {
       int distanceMap = map(distance, 0, 50, 0, 127);
-      MIDImessage(177, midiControllerChannel, distanceMap);
+      MIDImessage3(177, midiControllerChannel, distanceMap);
 //      Serial.print("Distance: "); 
 //      Serial.println(distance);
       lastVal = distance;
