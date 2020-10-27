@@ -58,8 +58,7 @@ void loop() {
   sonar5.updateMidi();
   sonar6.updateMidi();
 
-  pot1.updateMidi();
-  pot2.updateMidi();
-  pot3.updateMidi();
-  delay(100); 
+//  pot1.updateMidi();
+//  pot2.updateMidi();
+//  pot3.updateMidi();
 }

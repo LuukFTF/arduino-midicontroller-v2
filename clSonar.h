@@ -26,7 +26,7 @@ class clSonar {
     pinMode(echoPin, INPUT); 
     update();
     }
-  int update() {
+  void update() {
     digitalWrite(trigPin, LOW); 
     delayMicroseconds(2); 
     digitalWrite(trigPin, HIGH); 
@@ -41,12 +41,12 @@ class clSonar {
     return(distance);
   }
 
-  int updateMidi() {
+  void updateMidi() {
     getValue();
     
     int valDiff = distance  - lastVal;
 
-    if (abs(valDiff) > diff && distance < 50) {
+    if (abs(valDiff) > diff && distance < 30) {
       int distanceMap = map(distance, 0, 50, 0, 127);
       MIDImessage3(177, midiControllerChannel, distanceMap);
 //      Serial.print("Distance: "); 
